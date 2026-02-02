@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Savanna Dishes | Order</title>
+<link rel="stylesheet" href="dist/css/bootstrap.css">
+<script src="dist/js/bootstrap.js"></script>
+
+        <style>
+            :root {
+                --appetizers: #F4A261;
+                --main-dishes: #1F1F1F;
+                --fast-food: #C62828;
+                --traditional: #6B4F3F;
+                --snacks: #F9A825;
+                --desserts: #D16C7C;
+                --beverages: #2A9D8F;
+                --bg-light: #F7F4EF;
+                --text-dark: #333333;
+            }
+
+            body {
+                background-color: var(--bg-light);
+                color: var(--text-dark);
+            }
+
+            .bg-appetizers { background-color: var(--appetizers); }
+            .bg-main { background-color: var(--main-dishes); }
+            .bg-fast { background-color: var(--fast-food); }
+            .bg-traditional { background-color: var(--traditional); }
+            .bg-snacks { background-color: var(--snacks); }
+            .bg-desserts { background-color: var(--desserts); }
+            .bg-beverages { background-color: var(--beverages); }
+
+            .menu-card {
+                color: #fff;
+                border: none;
+                border-radius: 12px;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            .menu-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            }
+
+            .navbar-custom {
+                background-color: var(--main-dishes);
+            }
+
+            .btn-order {
+                background-color: var(--fast-food);
+                color: #fff;
+                border-radius: 25px;
+                padding: 10px 25px;
+                border: none;
+            }
+
+            .btn-order:hover {
+                background-color: #a81f1f;
+                color: #fff;
+            }
+            </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+    <!-- NAVBAR -->
+    <section class="row bg-main">
+    <div class="col-md-12">
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
+    <a href="index.html" class="navbar-brand fw-bold text-warning">Savanna Dishes</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+    <div class="navbar-nav ms-auto">
+    <a href="index.html" class="nav-link text-white">Home</a>
+    <a href="ordpage.html" class="nav-link text-warning active">Order</a>
+    <a href="abtpage.html" class="nav-link text-white">About Us</a>
+    </div>
+    </div>
+    </nav>
+    </div>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-6">
+    <div class="card shadow p-4">
+    <h4 class="text-center text-warning mb-3">Place Your Order</h4>
+
+    <form>
+    <input type="text" class="form-control mb-3" placeholder="Full Name" required>
+    <input type="tel" class="form-control mb-3" placeholder="Phone Number" required>
+
+    <select class="form-control mb-3">
+    <option>Select Dish</option>
+    <option>Beef Wellington</option>
+    <option>Roast Lamb Chops</option>
+    <option>Chicken Tikka Masala</option>
+    <option>Quarter Chicken & Chips</option>
+    <option>Double Cheese Burger</option>
+    <option>Beef Shawarma Wrap</option>
+    <option>Large Loaded Fries</option>
+    <option>Loaded Potato Skins</option>
+    <option>Vegetable Spring Rolls</option>
+    <option>Beef Samosas (3pcs)</option>
+    <option>Sticky BBQ Wings</option>
+    <option>Nyama Choma</option>
+    <option>Beef Stew & Ugali</option>
+    <option>Chicken Pilau</option>
+    <option>Sweet Mandazi</option>
+    <option>Loaded Masala Chips</option>
+    <option>Salted Roasted Maize</option>
+    <option>Beef Sausage Roll</option>
+    <option>Tropical Fruit Salad</option>
+    <option>Warm Fudge Brownie</option>
+    <option>Sticky Toffee Pudding</option>
+    <option>Passion Fruit Mousse</option>
+    <option>Fresh Dawn Juice</option>
+    <option>Classic Dawa Drink</option>
+    <option>Iced Hibiscus Tea</option>
+    <option>Kenya AA Coffee</option>
+    </select>
+
+    <input type="number" class="form-control mb-3" value="1" min="1">
+    <textarea class="form-control mb-3" rows="4" placeholder="Special Instructions"></textarea>
+
+    <div class="text-center">
+    <button class="btn-order">Submit Order</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </section>
+
+                <!-- section footer -->
+                <section class="row bg-main text-light p-4 mt-4">
+                
+                <!-- About Us -->
+                <div class="col-md-4">
+                    <h4 class="text-center text-warning">About Us</h4>
+                        <p>
+                        At Savanna Dishes, we celebrate the flavors of the African savanna. From traditional nyama choma to freshly prepared local stews, our meals are made with love and authentic ingredients.
+                        </p>
+                        <p>
+                        Our goal is to provide a warm, welcoming experience where every dish tells a story and every bite takes you closer to home.
+                        </p>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="col-md-4">
+                        <h4 class="text-center text-warning">Contact Us</h4>
+                            <form action="">
+
+                                <input type="email" placeholder="Enter Your E-mail" class="form-control mb-2" required>
+
+                                <textarea cols="30" rows="10" placeholder="Leave a Comment..." class="form-control mb-2"></textarea>
+
+                                <input type="submit" value="Send a Message" class="btn btn-fast-food text-light">
+                            </form>
+                </div>
+
+                <!-- Stay Connected -->
+                <div class="col-md-4 text-center">
+                        <h4 class="text-warning">Stay Connected</h4>
+
+                        <a href="https://www.facebook.com"><img src="images/fb.png" alt="Facebook" class="mx-1"></a>
+
+                        <a href="https://www.instagram.com"><img src="images/in.png" alt="Instagram" class="mx-1"></a>
+
+                        <a href="https://www.x.com"><img src="images/x.png" alt="X" class="mx-1"></a>
+                        
+                        <p class="mt-3">
+                        Follow Savanna Dishes on social media to stay updated on our latest specials, seasonal menus, and exciting events. Join our community and share the taste of the savanna with friends and family.
+                        </p>
+
+                </div>
+
+                </section>
+                
+                <!-- end of section footer -->
+
+                 <!-- section copyright -->
+                  <section class="row bg-dark text-warning text-center p-1">
+                    <h4 class="fs-6">Developed By Emmanuel. &copy; 2026, All Rights Reserved</h4>
+                  </section>
+                  <!-- end of section copyright -->
+</div>
+</body>
+</html>

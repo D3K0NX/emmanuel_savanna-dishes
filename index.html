@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Savanna Dishes</title>
+        <link rel="stylesheet" href="dist/css/bootstrap.css">
+        <script src="dist/js/bootstrap.js"></script>
+        <style>
+            :root {
+                --appetizers: #F4A261;
+                --main-dishes: #1F1F1F;
+                --fast-food: #C62828;
+                --traditional: #6B4F3F;
+                --snacks: #F9A825;
+                --desserts: #D16C7C;
+                --beverages: #2A9D8F;
+                --bg-light: #F7F4EF;
+                --text-dark: #333333;
+            }
+
+            body {
+                background-color: var(--bg-light);
+                color: var(--text-dark);
+            }
+
+            .bg-appetizers { background-color: var(--appetizers); }
+            .bg-main { background-color: var(--main-dishes); }
+            .bg-fast { background-color: var(--fast-food); }
+            .bg-traditional { background-color: var(--traditional); }
+            .bg-snacks { background-color: var(--snacks); }
+            .bg-desserts { background-color: var(--desserts); }
+            .bg-beverages { background-color: var(--beverages); }
+
+            .menu-card {
+                color: #fff;
+                border: none;
+                border-radius: 12px;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            .menu-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            }
+
+            .navbar-custom {
+                background-color: var(--main-dishes);
+            }
+
+            /* default button */
+            .btn-order {
+                background-color: var(--fast-food);
+                color: #fff;
+                border-radius: 25px;
+                padding: 10px 25px;
+                border: none;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+
+            /* special case: if button is inside a red card, make it white with red text */
+            .bg-fast .btn-order {
+                background-color: #fff;   /* white button */
+                color: var(--fast-food);  /* red text */
+                font-weight: bold;
+            }
+
+            .btn-order:hover {
+                background-color: #a81f1f;
+                color: #fff;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <section class="row">
+                <div class="col-md-12 bg-main">
+
+                    <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
+                    
+                    <!-- Brand -->
+                    <a href="" class="navbar-brand fw-bold text-warning">
+                        Savanna Dishes
+                    </a>
+
+                    <!-- Toggler -->
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarcollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse" id="navbarcollapse">
+                        <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-link active text-warning">Home</a>
+                        <a href="ordpage.html" class="nav-link text-white">Order</a>
+                        <a href="abtpage.html" class="nav-link text-white">About Us</a>
+                        </div>
+                    </div>
+
+
+                    </nav>
+
+                </div>
+            </section>
+             <!-- section 2 -->
+              <section class="row mt-3 mb-3">
+                <div class="col-md-12">
+                    <!-- .carousel allows the corousel to be created -->
+                     <!-- .slide makes the images slide as one -->
+                      <!-- data-bs-ride is the java script required to allow the images in the carousel -->
+                       <!-- id is to help js identify the carousel for the control bouttons -->
+                    <div class="carousel slide" data-bs-ride="carousel" id="carousel">
+                        <!-- wrapper -->
+                         <!-- .carousel-inner wraps the items in the carousel-items -->
+                        <div class="carousel-inner">
+                            <!-- carousel items -->
+                             <!-- .crousel-item is the items in the carousel -->
+                              <!-- .active is tells the browserwhich is the first image -->
+                               <!-- .w-100 tells the images to occupy 100% of the width of the row -->
+                             <div class="carousel-item active">
+                                <img src="images/slide1.jpg" alt="slide1" class="w-100 d-block" height="400px">
+                             </div>
+
+                             <div class="carousel-item">
+                                <img src="images/slide2.jpg" alt="slide2" class="w-100 d-block" height="400px">
+                             </div>
+
+                             <div class="carousel-item">
+                                <img src="images/slide3.png " alt="slide3" class="w-100 d-block" height="400px">
+                             </div>
+                        </div>
+                        <!-- controllers -->
+                         <!-- href uses the id made to allow one to link the buttons for prev and next with the carousel -->
+                          <!-- data-bs-slide="prev" allows the element to tell the carousel to move to the previous slide -->
+                           <!-- .carousel-control-prev this places the icon in the correct place similar to .carousel-control-next -->
+                            <!-- .carousel-control-prev-icon is the previous icon while .carousel-control-next-icon is the next icon -->
+                         <a href="#carousel" data-bs-slide="prev" class="carousel-control-prev">
+                            <span class="carousel-control-prev-icon bg-danger">
+                            </span>
+                         </a>
+                         <a href="#carousel" data-bs-slide="next" class="carousel-control-next">
+                            <span class="carousel-control-next-icon bg-danger"></span>
+                         </a>
+                    </div>
+                </div>
+              </section>
+              <!-- end of section 2 -->
+
+              <!-- section 3 -->
+               <h4>Main Dishes</h4>
+               <section class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card shadow menu-card bg-main">
+                            <div class="card-header">
+                                <h6>Beef Wellington</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <img src="images/beefwell.jpg" alt="bed13" width="100%" height="300px">
+                            </div>
+
+                            <div class="card-footer">
+                                <p>Tender beef fillet coated in savory mushroom duxelles, wrapped in buttery, golden-brown flaky puff pastry.</p>
+                                <b class="text-warning">KSh 4,500</b>
+                                <br><br>
+                                <button class="btn-order">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 text-center">
+                        <div class="card shadow menu-card bg-main">
+                            <div class="card-header">
+                                <h6>Roast Lamb Chops</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <img src="images/lambchops.jpg" alt="lambchops" width="100%" height="300px">
+                            </div>
+
+                            <div class="card-footer">
+                                <p>Herb-crusted lamb chops seared until juicy, served alongside roasted root vegetables and vibrant mint jus for extra flavor.</p>
+                                <b class="text-warning">KSh 2,800</b>
+                                <br><br>
+                                <button class="btn-order">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div class="card shadow menu-card bg-main">
+                            <div class="card-header">
+                                <h6>Chicken Tikka Masala</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <img src="images/chickentm.png" alt="Chicken Tikka" width="100%" height="300px">
+                            </div>
+
+                            <div class="card-footer">
+                                <p>Succulent roasted chicken chunks simmered in a spiced, creamy tomato sauce served with basmati rice.</p>
+                                <b class="text-warning">KSh 1,450</b>
+                                <br><br>
+                                <button class="btn-order">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+               </section>
+               <!-- end of section 3 -->
+
+               <br><hr>
+
+               <!-- section 4 -->
+               <h4>Fast Foods</h4>
+               <section class="row">
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-fast">
+                            <div class="card-header">
+                                <h6>Quarter Chicken & Chips</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <img src="images/quartercnc.jpg" alt="quartercnc" width="100%" height="300px">
+                            </div>
+
+                            <div class="card-footer">
+                                <p>Flame-grilled quarter chicken served with a generous portion of golden crispy fries and a signature dipping sauce.</p>
+                                <b class="text-warning">KSh 720</b>
+                                <br><br>
+                                <button class="btn-order">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-fast">
+                            <div class="card-header">
+                                <h6>Double Cheese Burger</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <img src="images/doubleburger.jpg" alt="burger" width="100%" height="300px">
+                            </div>
+
+                            <div class="card-footer">
+                                <p>Two juicy beef patties layered with melted cheddar, fresh pickles, and onions on a toasted brioche bun.</p>
+                                <b class="text-warning">KSh 850</b>
+                                <br><br>
+                                <button class="btn-order">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-fast">
+                            <div class="card-header">
+                                <h6>Beef Shawarma Wrap</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <img src="images/bshawarma.jpg" alt="Beef Shawarma" width="100%" height="300px">
+                            </div>
+
+                            <div class="card-footer">
+                                <p>Thinly sliced marinated beef wrapped in soft pita bread with garlic sauce, tahini, and crunchy fresh vegetables.</p>
+                                <b class="text-warning">KSh 600</b>
+                                <br><br>
+                                <button class="btn-order">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-fast">
+                            <div class="card-header">
+                                <h6>Large Loaded Fries</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <img src="images/llfries.jpg" alt="Loaded Fries" width="100%" height="300px">
+                            </div>
+
+                            <div class="card-footer">
+                                <p>A mountain of crispy fries topped with melted cheese sauce, spicy jalapeños, and bits of savory grilled bacon.</p>
+                                <b class="text-warning">KSh 450</b>
+                                <br><br>
+                                <button class="btn-order">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+               </section>
+               <!-- end of section 4 -->
+
+               <br><hr>
+
+               <!-- section 5 -->
+                <h4>Appetizers</h4>
+                <section class="row">
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-appetizers">
+                        <div class="card-header"><h6>Loaded Potato Skins</h6></div>
+                        <div class="card-body">
+                            <img src="images/loadedpot.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Crispy potato boats filled with melted cheddar cheese, savory beef bits, and fresh chives, served with cool sour cream.</p>
+                            <b class="text-dark">KSh 750</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-appetizers">
+                        <div class="card-header"><h6>Vegetable Spring Rolls</h6></div>
+                        <div class="card-body">
+                            <img src="images/springroll.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Light and crunchy pastry rolls stuffed with shredded garden vegetables, served with a zesty sweet chili dipping sauce side.</p>
+                            <b class="text-dark">KSh 600</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-appetizers">
+                        <div class="card-header"><h6>Beef Samosas (3pcs)</h6></div>
+                        <div class="card-body">
+                            <img src="images/samosa.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Crispy, golden-brown pastries filled with perfectly spiced minced beef and fresh traditional Kenyan herbs, served with lime wedges.</p>
+                            <b class="text-dark">KSh 650</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-appetizers">
+                        <div class="card-header"><h6>Sticky BBQ Wings</h6></div>
+                        <div class="card-body">
+                            <img src="images/wings.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Six jumbo chicken wings glazed in a sweet and smoky hickory barbecue sauce, served alongside a cool ranch dip.</p>
+                            <b class="text-dark">KSh 850</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- end of section 5 -->
+
+                <br><hr>
+
+                <!-- section 6 -->
+                <h4>Traditional Dishes</h4>
+                <section class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card shadow menu-card bg-traditional">
+                        <div class="card-header"><h6>Nyama Choma</h6></div>
+                        <div class="card-body">
+                            <img src="images/nyama.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Charcoal-grilled beef served with kachumbari.</p>
+                            <b class="text-warning">KSh 1,200</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div class="card shadow menu-card bg-traditional">
+                        <div class="card-header"><h6>Beef Stew & Ugali</h6></div>
+                        <div class="card-body">
+                            <img src="images/beefstew.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Slow-cooked beef stew served with hot ugali.</p>
+                            <b class="text-warning">KSh 900</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div class="card shadow menu-card bg-traditional">
+                        <div class="card-header"><h6>Chicken Pilau</h6></div>
+                        <div class="card-body">
+                            <img src="images/chickp.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Fragrant spiced rice with tender chicken.</p>
+                            <b class="text-warning">KSh 850</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>      
+                </section>
+                <!-- end of section 6 -->
+
+                <br><hr>
+
+                <!-- section 7 -->
+                <h4>Snacks</h4>
+                <section class="row">
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-snacks">
+                        <div class="card-header"><h6>Sweet Mandazi</h6></div>
+                        <div class="card-body">
+                            <img src="images/mandazi.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Two soft, fluffy, and lightly sweetened Kenyan-style doughnuts infused with ground cardamom, fried until perfectly golden and very airy.</p>
+                            <b class="text-dark">KSh 150</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-snacks">
+                        <div class="card-header"><h6>Loaded Masala Chips</h6></div>
+                        <div class="card-body">
+                            <img src="images/masala.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Crispy golden fries tossed in a spicy tomato-based masala sauce, garnished with fresh coriander and a squeeze of lemon.</p>
+                            <b class="text-dark">KSh 450</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-snacks">
+                        <div class="card-header"><h6>Salted Roasted Maize</h6></div>
+                        <div class="card-body">
+                            <img src="images/srmaize.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Traditional crunchy dry-roasted corn kernels seasoned with sea salt and a touch of spicy chili for an authentic snack.</p>
+                            <b class="text-dark">KSh 100</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-snacks">
+                        <div class="card-header"><h6>Beef Sausage Roll</h6></div>
+                        <div class="card-body">
+                            <img src="images/sausageroll.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Savory seasoned minced beef encased in layers of buttery, flaky puff pastry, baked until golden and served warm daily.</p>
+                            <b class="text-dark">KSh 250</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end of section 7 -->
+
+
+                <br><hr>
+
+                <!-- section 8 -->
+                <h4>Desserts</h4>
+                <section class="row">
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-desserts">
+                        <div class="card-header"><h6>Tropical Fruit Salad</h6></div>
+                        <div class="card-body">
+                            <img src="images/friutsal.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>A refreshing blend of seasonal Kenyan fruits including sweet mango, pineapple, and passion fruit, drizzled with a honey-lime dressing.</p>
+                            <b class="text-dark">KSh 400</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-desserts">
+                        <div class="card-header"><h6>Warm Fudge Brownie</h6></div>
+                        <div class="card-body">
+                            <img src="images/fudgebro.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Rich, gooey chocolate brownie served warm with a scoop of vanilla bean ice cream and a drizzle of chocolate.</p>
+                            <b class="text-dark">KSh 550</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-desserts">
+                        <div class="card-header"><h6>Sticky Toffee Pudding</h6></div>
+                        <div class="card-body">
+                            <img src="images/puddingt.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>A moist sponge cake made with finely chopped dates, covered in a warm toffee sauce and served with cream.</p>
+                            <b class="text-dark">KSh 600</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-desserts">
+                        <div class="card-header"><h6>Passion Fruit Mousse</h6></div>
+                        <div class="card-body">
+                            <img src="images/passionmousse.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Light and airy whipped cream mousse infused with zesty passion fruit pulp, served chilled with a crunchy biscuit base.</p>
+                            <b class="text-dark">KSh 450</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- end of section -->
+
+                <br><hr>
+
+                <!-- section 9 -->
+                <h4>Beverages</h4>
+                <section class="row">
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-beverages">
+                        <div class="card-header">
+                            <h6>Fresh Dawn Juice</h6>
+                            </div>
+                        <div class="card-body">
+                            <img src="images/dawn.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>A vibrant, chilled blend of freshly squeezed oranges, carrots, and a hint of ginger for a refreshing morning kick.</p>
+                            <b class="text-dark">KSh 350</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-beverages">
+                        <div class="card-header">
+                            <h6>Classic Dawa Drink</h6>
+                            </div>
+                        <div class="card-body">
+                            <img src="images/dawa.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>A famous Kenyan cocktail made with vodka, honey, lime, and crushed ice, stirred with a traditional wooden honey stick.</p>
+                            <b class="text-dark">KSh 450</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-beverages">
+                        <div class="card-header">
+                            <h6>Iced Hibiscus Tea</h6>
+                            </div>
+                        <div class="card-body">
+                            <img src="images/icedhibi.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>Naturally sweet and tart hibiscus petals steeped and chilled, served over ice with a sprig of fresh garden mint.</p>
+                            <b class="text-dark">KSh 300</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <div class="card shadow menu-card bg-beverages">
+                        <div class="card-header">
+                            <h6>Kenya AA Coffee</h6>
+                            </div>
+                        <div class="card-body">
+                            <img src="images/aacoffee.jpg" width="100%" height="300px">
+                        </div>
+                        <div class="card-footer">
+                            <p>World-renowned, full-bodied coffee brewed from premium local beans, offering a rich aroma with bright, wine-like acidity and citrus notes.</p>
+                            <b class="text-dark">KSh 250</b><br><br>
+                            <button class="btn-order">Order Now</button>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end of section 9 -->
+
+                <!-- section footer -->
+                <section class="row bg-main text-light p-4 mt-4">
+                
+                <!-- About Us -->
+                <div class="col-md-4">
+                    <h4 class="text-center text-warning">About Us</h4>
+                        <p>
+                        At Savanna Dishes, we celebrate the flavors of the African savanna. From traditional nyama choma to freshly prepared local stews, our meals are made with love and authentic ingredients.
+                        </p>
+                        <p>
+                        Our goal is to provide a warm, welcoming experience where every dish tells a story and every bite takes you closer to home.
+                        </p>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="col-md-4">
+                        <h4 class="text-center text-warning">Contact Us</h4>
+                            <form action="">
+
+                                <input type="email" placeholder="Enter Your E-mail" class="form-control mb-2" required>
+
+                                <textarea cols="30" rows="10" placeholder="Leave a Comment..." class="form-control mb-2"></textarea>
+
+                                <input type="submit" value="Send a Message" class="btn btn-fast-food text-light">
+                            </form>
+                </div>
+
+                <!-- Stay Connected -->
+                <div class="col-md-4 text-center">
+                        <h4 class="text-warning">Stay Connected</h4>
+
+                        <a href="https://www.facebook.com"><img src="images/fb.png" alt="Facebook" class="mx-1"></a>
+
+                        <a href="https://www.instagram.com"><img src="images/in.png" alt="Instagram" class="mx-1"></a>
+
+                        <a href="https://www.x.com"><img src="images/x.png" alt="X" class="mx-1"></a>
+                        
+                        <p class="mt-3">
+                        Follow Savanna Dishes on social media to stay updated on our latest specials, seasonal menus, and exciting events. Join our community and share the taste of the savanna with friends and family.
+                        </p>
+
+                </div>
+
+                </section>
+                
+                <!-- end of section footer -->
+
+                 <!-- section copyright -->
+                  <section class="row bg-dark text-warning text-center p-1">
+                    <h4 class="fs-6">Developed By Emmanuel. &copy; 2026, All Rights Reserved</h4>
+                  </section>
+                  <!-- end of section copyright -->
+        </div>
+    </body>
+</html>
